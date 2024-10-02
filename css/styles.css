@@ -13,19 +13,86 @@
 
 section{
   background-color: #ffffff;
+  padding: -70px;
+}
+.rolet{
+  color: #a30303;
 }
 p{
   color: #000;
 }
+#dark-icon {
+  display: none;
+}
+
+/* Modo claro (light-mode) */
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.section-content.light-mode .accordion-button,
+.section-content.light-mode .accordion-body,
+.modal.light-mode .modal-content,
+.modal.light-mode ul {
+  background-color: white;
+  color: black;
+}
+
+/* Modo escuro (dark-mode) */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.section-content.dark-mode .accordion-button,
+.section-content.dark-mode .accordion-body,
+.modal.dark-mode .modal-content,
+.modal.dark-mode ul {
+  background-color: #252525;
+  color: white;
+}
+
+/* Timeline */
+ul.timeline-3 {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline-3:before {
+  content: " ";
+  background: #0fbd15;
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline-3 > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline-3 > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid #0d6efd;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
 .etbilu{
   color: #0fbd15;
 }
 .card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px; 
-  justify-content: space-between; 
+  gap: 50px; 
+  justify-content: center; 
 }
 
 .card {
@@ -38,19 +105,26 @@ p{
   font-family: Arial, sans-serif;
 }
 .cardv{
-  background-color: #dc3545;
+  --bs-card-bg: #dc3545;
 }
+.card-container h3{
+  color: #fff;
+}
+
 .cardam{
-  background-color: #ffc107;
+  --bs-card-bg: #f6fa20;
 }
 .cardver{
-  background-color: #0fbd15;
+  --bs-card-bg: #0fbd15;
 }
 .cardl{
-  background-color: #dc3545;
+  --bs-card-bg: #fcbf17;
 }
 .carda{
-  background-color: #0dcaf0;
+  --bs-card-bg: #0dcaf0;
+}
+.cardp{
+  --bs-card-bg: #0d6efd;
 }
 :root {
   --bs-blue: #0d6efd;
@@ -2888,25 +2962,25 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #bd5d38;
-  --bs-btn-border-color: #bd5d38;
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #dfdfdfbd;
+  --bs-btn-border-color: #000000;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #c77556;
-  --bs-btn-hover-border-color: #c46d4c;
+  --bs-btn-hover-bg: #0344a3;
+  --bs-btn-hover-border-color: #000000;
   --bs-btn-focus-shadow-rgb: 161, 79, 48;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #ca7d60;
-  --bs-btn-active-border-color: #c46d4c;
+  --bs-btn-active-bg: #0fbd15;
+  --bs-btn-active-border-color: #b64cc4;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #bd5d38;
-  --bs-btn-disabled-border-color: #bd5d38;
+  --bs-btn-disabled-bg: #555555;
+  --bs-btn-disabled-border-color: #555555;
 }
 
 .btn-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #6c757d;
+  --bs-btn-bg: #0344a3;
   --bs-btn-border-color: #6c757d;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #5c636a;
@@ -4206,8 +4280,7 @@ textarea.form-control-lg {
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: ;
-  --bs-card-bg: #fff;
+  --bs-card-color:  ;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
